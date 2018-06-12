@@ -1,0 +1,21 @@
+{
+  "name": "part2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "colors": "^1.1.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "http": "0.0.0",
+    "net": "^1.0.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "me",
+  "license": "ISC"
+}
