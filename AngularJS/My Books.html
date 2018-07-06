@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang='en' ng-app="app">
+<head>
+    <title>Book Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="angular10.js"></script>
+    <script>
+        angular.module('app', []).controller('app.cart', ['$scope', function ($scope) {
+            $scope.books = angular.fromJson(localStorage.getItem('rykal_cart')) || [
+                {title: 'Absolute Java', qty: 1, price: 114.95},
+                {title: 'Pro HTML5', qty: 1, price: 27.95},
+                {title: 'Head First HTML5', qty: 1, price: 27.89}
+            ];
+
+            $scope.getTotal = function () {
+                var total = 0;
+
+                for (var i = 0; i < $scope.books.length; i++) {
+                    var product = $scope.books[i];
+                    total += product.price * product.qty;
+                }
+                return total;
+            };
+
+            $scope.removeBook = function (index) {
+                $scope.books.splice(index, 1);
+            };
+            $scope.addBook = function () {
+                $scope.books.push({
+                    title: 'New Book',
+                    qty: 1,
+                    price: 10.99
+                });
+            };
+            $scope.saveCart = function () {
+                localStorage.setItem('rykal_cart', angular.toJson($scope.books));
+            }
+        }]);
+    </script>
+</head>
+<body ng-controller="app.cart">
+
+<table class="cart">
+    <caption><b>My Books</b></caption>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Qty</th>
+        <th>UnitPrice</th>
+        <th>$UnitPrice</th>
+        <th>Line Total</th>
+        <th>Total {{getTotal() | currency}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="book in books">
+        <td><input ng-model="book.title" size="24"></td>
+        <td><input ng-model="book.qty" size="2"></td>
+        <td><input ng-model="book.price" size="8"></td>
+        <td>{{book.price | currency}}</td>
+        <td>{{book.price * book.qty | currency}}</td>
+        <td><button ng-click="removeBook($index)">Remove</button></td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3"><button ng-click="addBook()">New</button></td>
+        <td colspan="3"><button ng-click="saveCart()">Save</button></td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
+
+
+

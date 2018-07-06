@@ -1,0 +1,37 @@
+.cart {
+    border-collapse: collapse;
+    font-family: Futura, Arial, sans-serif;
+    border: 2px solid #777;
+}
+
+.cart caption {
+    font-size: larger;
+}
+
+.cart th,
+.cart td {
+    padding: .5em;
+}
+
+.cart th,
+.cart tfoot td {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.cart tfoot td {
+    text-align: center;
+}
+
+.cart tr {
+    background: #ccc;
+}
+
+.cart tr:hover {
+    background: #def;
+}
+
+.cart tbody td {
+    border-right: 1px solid #777;
+}

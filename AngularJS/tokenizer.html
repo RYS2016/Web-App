@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tokenizer</title>
+    <style>
+        body {
+            font-size: 20px;
+        }
+        label {
+            min-width: 100px;
+            display: inline-block;
+        }
+        .app-controller > div {
+            margin: 10px;
+        }
+        .app-controller p {
+            margin: 20px 10px;
+            font-size: 24px;
+        }
+    </style>
+    <script src="angular10.js"></script>
+    <script>
+        angular.module('app', [])
+            .filter('tokenize', function() {
+                return function (str, glue) {
+                    if (!str) {
+                        return str;
+                    }
+                    if (!angular.isString(str)) {
+                        str = str.toString();
+                    }
+
+                    return str.split('').join(glue);
+                }
+            })
+            .controller('tokenizerController', function() {});
+    </script>
+</head>
+<body ng-app="app">
+    <div ng-controller="tokenizerController" class="app-controller">
+        <div><label for="source">Input: </label><input ng-model="source" id="source"></div>
+        <div><label for="delimiter">Delimiter: </label><input ng-model="delimiter" id="delimiter"></div>
+        <p>{{source | tokenize:delimiter}}</p>
+    </div>
+
+</body>
+</html>
