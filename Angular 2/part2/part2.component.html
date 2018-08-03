@@ -1,0 +1,5 @@
+<div class="app-controller">
+    <div><label for="source">Input: </label><input [(ngModel)]="source" id="source"></div>
+    <div><label for="delimiter">Delimiter: </label><input [(ngModel)]="delimiter" id="delimiter"></div>
+    <p>{{source | tokenizer:delimiter}}</p>
+</div>

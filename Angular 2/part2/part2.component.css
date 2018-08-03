@@ -1,0 +1,17 @@
+    body {
+        font-size: 20px;
+    }
+    
+    label {
+        min-width: 100px;
+        display: inline-block;
+    }
+    
+    .app-controller>div {
+        margin: 10px;
+    }
+    
+    .app-controller p {
+        margin: 20px 10px;
+        font-size: 24px;
+    }
