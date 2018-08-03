@@ -1,0 +1,53 @@
+<body ng-controller="app.cart">
+
+    <table class="cart">
+        <caption><b>My Books</b></caption>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Qty</th>
+                <th>UnitPrice</th>
+                <th>$UnitPrice</th>
+                <th>Line Total</th>
+                <th>Total {{getTotal() | currency}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let book of books">
+                <td><input [(ngModel)]="book.title" size="24"></td>
+                <td><input [(ngModel)]="book.qty" size="2"></td>
+                <td><input [(ngModel)]="book.price" size="8"></td>
+                <td>{{book.price | currency}}</td>
+                <td>{{book.price * book.qty | currency}}</td>
+                <td><button [ngStyle]="{color: 'white',
+                'background-color':'red',
+                'border-color': 'red',
+                 'font-size':'20px',
+                'border-radius':'15%',
+                 'font-size':'15px',
+                'padding': '10px',
+                'margin-left':'20px'}" (click)="removeBook()">Remove</button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><button [ngStyle]="{color: 'white',
+                'background-color':'lightblue',
+                'border-color': 'lightblue',
+                'margin-left':'-275px',
+                'border-radius':'50%',
+                'font-size':'20px',
+                'font-size':'15px',
+                'padding':'10px'}" (click)="addBook()">New</button></td>
+
+                <td colspan="3"><button [ngStyle]="{color: 'white',
+                'background-color':'lightblue',
+                'border-color': 'lightblue',
+                 'margin-left':'-275px',
+                'border-radius':'50%',
+                'font-size':'15px',
+                'padding':'10px'}" (click)="saveCart()">Save</button></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
