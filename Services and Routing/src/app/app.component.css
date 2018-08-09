@@ -1,0 +1,72 @@
+table {
+    border-collapse: collapse;
+    font-family: Futura, Arial, sans-serif;
+}
+
+caption {
+    font-size: larger;
+}
+
+th,
+td {
+    padding: .5em;
+}
+
+th,
+thead {
+    background: #000;
+    color: #fff;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+tr {
+    background: #ccc;
+}
+
+tr:hover {
+    background: #def;
+}
+
+td {
+    border-right: 1px solid #777;
+}
+
+table {
+    border: 2px solid #777;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    font-family: verdana, helvetica, sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+button {
+    width: 75px;
+    height: 20px;
+    margin-left: 10px;
+    background-color: #f00;
+    color: #fff;
+}
+
+#center {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#wrapper {
+    width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Shadows Into Light", verdana, helvetica;
+    border-bottom: 1px solid black;
+    width: 150px;
+    margin: 20px auto 20px auto;
+}

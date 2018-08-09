@@ -1,0 +1,29 @@
+<div class="container">
+    <h3>MapQuest</h3>
+    <form>
+        <input type="text" #directFrom>
+        <input type="text" #directTo>
+        <button class="btn btn-primary" (click)="getData()">Get Direction</button>
+    </form>
+
+    <div>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+
+                    <th>Distance: <span ng-model="distance">{{distance}}</span> miles - Time: <span ng-model="time">{{time}}</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of dataItems">
+                <tr>
+                    <td>{{item.index+1}}.</td>
+                    <td><a href={{item.mapUrl}} target="_blank">{{item.narrative}}</a></td>
+                    <td>{{item.distance}}m</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
